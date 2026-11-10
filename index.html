@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alena Massage Lisbon</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: single calm column, left-aligned, session lengths as the central list. */
+:root {
+  --bg: #F0F3F0;
+  --surface: #E4EAE6;
+  --fg: #1D2825;
+  --muted: #55645F;
+  --line: #C9D3CD;
+  --accent: #2C5B53;
+  --accent-fg: #F0F3F0;
+  --glow: #D5E4DC;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121A18; --surface: #1A2522; --fg: #E5EBE8; --muted: #9DB0AA;
+    --line: #2C3A36; --accent: #8CC5B7; --accent-fg: #0F1715; --glow: #1B2D28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121A18; --surface: #1A2522; --fg: #E5EBE8; --muted: #9DB0AA;
+  --line: #2C3A36; --accent: #8CC5B7; --accent-fg: #0F1715; --glow: #1B2D28;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+header {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 22px;
+}
+.brand { font-family: var(--display); font-size: 1.25rem; letter-spacing: 0.01em; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  background: var(--accent); color: var(--accent-fg);
+  padding: 12px 22px; border-radius: 999px; border: 0; cursor: pointer; font-family: var(--body);
+}
+.btn:hover { opacity: 0.9; }
+.btn.small { padding: 9px 18px; font-size: 0.88rem; }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+
+.hero {
+  padding-block: 56px 64px;
+  background: radial-gradient(60% 80% at 85% 10%, var(--glow), transparent 70%);
+}
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+h1 {
+  font-family: var(--display); font-weight: 400; font-size: clamp(2.3rem, 7vw, 4rem);
+  line-height: 1.08; margin: 0 0 24px; text-wrap: balance; letter-spacing: -0.01em;
+}
+h1 em { color: var(--accent); }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 34em; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+section { padding-block: 48px; border-top: 1px solid var(--line); }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 4.5vw, 2.2rem); line-height: 1.15; margin: 0 0 20px; text-wrap: balance; }
+p { margin: 0 0 16px; max-width: 38em; }
+
+.sessions { list-style: none; margin: 28px 0 0; padding: 0; }
+.session {
+  display: grid; grid-template-columns: 130px minmax(0, 1fr) auto; gap: 8px 24px;
+  align-items: baseline; padding-block: 22px; border-bottom: 1px solid var(--line);
+}
+.session:first-child { border-top: 1px solid var(--line); }
+.dur { font-family: var(--display); font-size: 2.1rem; line-height: 1; white-space: nowrap; }
+.dur small { font-family: var(--body); font-size: 0.8rem; color: var(--muted); margin-left: 4px; letter-spacing: 0.06em; }
+.session h3 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 600; }
+.session p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.price { font-family: var(--display); font-size: 1.5rem; white-space: nowrap; text-align: right; }
+.price.ask { font-family: var(--body); font-size: 0.9rem; color: var(--muted); }
+.note { color: var(--muted); font-size: 0.93rem; margin-top: 20px; }
+
+.methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 40px; margin-top: 24px; }
+.methods div { min-width: 0; }
+.methods h3 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; color: var(--accent); }
+.methods p { margin: 0; font-size: 0.97rem; color: var(--muted); }
+
+.about-box { background: var(--surface); border-radius: 16px; padding: 28px; margin-top: 24px; }
+.about-box h3 { margin: 0 0 10px; font-size: 1rem; font-weight: 600; }
+.about-box ul { margin: 0; padding-left: 1.1em; color: var(--muted); font-size: 0.97rem; }
+.about-box li { margin-bottom: 4px; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px 40px; margin-top: 24px; }
+.facts dt { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.facts dd { margin: 0; min-width: 0; }
+
+.contact { text-align: left; }
+.number { font-family: var(--display); font-size: clamp(1.6rem, 6vw, 2.2rem); margin: 8px 0 20px; user-select: all; overflow-wrap: anywhere; }
+.copy-status { font-size: 0.88rem; color: var(--muted); margin-left: 8px; }
+
+footer { border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 0.88rem; }
+footer p { max-width: none; margin-bottom: 8px; }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .session { grid-template-columns: minmax(0, 1fr) auto; }
+  .dur { grid-column: 1; }
+  .price { grid-column: 2; grid-row: 1; }
+  .session > div { grid-column: 1 / -1; }
+  .hero { padding-block: 36px 48px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: opacity 0.2s; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">Alena · Massage</div>
+    <a class="btn small" href="https://wa.me/351937990470?text=Hello%20Alena!%20I%27d%20like%20to%20book%20a%20massage." target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Massage in Lisbon · Campo de Ourique · Home visits</p>
+    <h1>Massage as a <em>conversation</em> with the body.</h1>
+    <p class="lead">Intuitive massage that is shaped in the moment. I listen to how your body responds and adjust the pressure, pace and focus as we go, so no two sessions are the same.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/351937990470?text=Hello%20Alena!%20I%27d%20like%20to%20book%20a%20massage." target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn ghost" href="#sessions">See sessions</a>
+    </div>
+  </div>
+
+  <section id="approach">
+    <h2>Listening through touch</h2>
+    <p>For me, the quality of a massage comes from presence and sensitivity: tuning in to you, physically and energetically. I talk mostly through touch and read the response of your body, so the session follows what you need on that day.</p>
+    <p>Muscle tension often softens together with the nervous system. Most people leave feeling calmer, lighter and more at home in their body. Sometimes emotions rise and release by themselves as tension lets go. That is welcome when it happens, and never the goal.</p>
+    <div class="methods">
+      <div><h3>Trigger point work</h3><p>Focused pressure on tight spots that hold pain and stiffness.</p></div>
+      <div><h3>Myofascial release</h3><p>Slow, sustained work with the connective tissue around the muscles.</p></div>
+      <div><h3>Classic relaxing massage</h3><p>Flowing Swedish strokes that settle the body and mind.</p></div>
+      <div><h3>Thai and functional elements</h3><p>Stretching and movement-based techniques, used when they help.</p></div>
+    </div>
+    <p style="margin-top:28px">Essential oils and a playlist chosen for the session help you drop out of your head and into your body.</p>
+  </section>
+
+  <section id="sessions">
+    <h2>Sessions</h2>
+    <p>The length of the session decides how much of the body we can work with.</p>
+    <ul class="sessions">
+      <li class="session">
+        <div class="dur">30–40<small>MIN</small></div>
+        <div>
+          <h3>Focused neck and shoulder or back massage</h3>
+          <p>A short session that targets one area where you hold the most tension.</p>
+        </div>
+        <div class="price">€30</div>
+      </li>
+      <li class="session">
+        <div class="dur">60<small>MIN</small></div>
+        <div>
+          <h3>Classic massage</h3>
+          <p>Back, back of the arms and legs, and a little neck and shoulders.</p>
+        </div>
+        <div class="price">€50</div>
+      </li>
+      <li class="session">
+        <div class="dur">90<small>MIN</small></div>
+        <div>
+          <h3>Full-body massage</h3>
+          <p>The whole body, or the back of the body plus a dedicated neck and shoulder session.</p>
+        </div>
+        <div class="price">€70</div>
+      </li>
+      <li class="session">
+        <div class="dur">120<small>MIN</small></div>
+        <div>
+          <h3>Deep full-body massage</h3>
+          <p>Slow, thorough work with the entire body, with time for the areas that need it most.</p>
+        </div>
+        <div class="price">€95</div>
+      </li>
+    </ul>
+    <p class="note">Home visits across Lisbon: +€10 to the session price. Details are agreed by message.</p>
+  </section>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>I am Alena, a certified massage therapist with a long background in body and energy practices. These practices shaped how I work: with patience, sensitivity and respect for each person's pace.</p>
+    <div class="about-box">
+      <h3>Background</h3>
+      <ul>
+        <li>Certified massage therapist</li>
+        <li>10+ years of meditation practice</li>
+        <li>7 years of Kundalini yoga</li>
+        <li>Universal Healing Rays and Reiki attunement</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Book a session</h2>
+    <p>Write to me on WhatsApp and we will find a time. I am open to appointments from 10:00 to 21:00. Please book in advance.</p>
+    <div class="number" id="num">+351 937 990 470</div>
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/351937990470?text=Hello%20Alena!%20I%27d%20like%20to%20book%20a%20massage." target="_blank" rel="noopener">Open WhatsApp</a>
+      <button class="btn ghost" id="copy" type="button">Copy number</button><span class="copy-status" id="status" role="status"></span>
+    </div>
+    <dl class="facts">
+      <div><dt>Where</dt><dd>Campo de Ourique, Lisbon, and home visits across the city</dd></div>
+      <div><dt>Hours</dt><dd>10:00 to 21:00, by appointment</dd></div>
+      <div><dt>Language</dt><dd>English</dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <p>Massage supports relaxation and well-being. It does not replace medical care.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var status = document.getElementById('status');
+  var num = document.getElementById('num');
+  btn.addEventListener('click', function () {
+    var text = '+351937990470';
+    function done(ok) {
+      status.textContent = ok ? 'Copied' : 'Press and hold the number to copy it';
+      setTimeout(function () { status.textContent = ''; }, 3000);
+    }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(num);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      done(false);
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</html>
